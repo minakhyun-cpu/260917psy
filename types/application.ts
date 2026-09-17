@@ -1,8 +1,9 @@
 import { z } from "zod";
+import { TEST_CATALOG } from "@/lib/testCatalog";
 
 export const TEST_TYPES = [
   { value: "personality", label: "성격검사" },
-  { value: "career", label: "진로적성검사" },
+  { value: "child", label: "자녀 검사" },
   { value: "stress", label: "정서·스트레스 척도" },
   { value: "other", label: "기타" },
 ] as const;
@@ -31,9 +32,10 @@ export const applicationSchema = z.object({
     .max(20, "연락처를 정확히 입력해주세요.")
     .regex(/^[0-9-]+$/, "숫자와 '-'만 입력해주세요."),
   email: z.string().trim().min(1, "이메일을 입력해주세요.").email("올바른 이메일 주소를 입력해주세요."),
-  testType: z.enum(["personality", "career", "stress", "other"], {
+  testType: z.enum(["personality", "child", "stress", "other"], {
     message: "희망 검사 종류를 선택해주세요.",
   }),
+  subTests: z.array(z.string()),
   consultMethod: z.enum(["online", "offline"], {
     message: "희망 상담 방식을 선택해주세요.",
   }),
@@ -60,6 +62,15 @@ export const applicationSchema = z.object({
   privacyConsent: z.literal(true, {
     message: "개인정보 수집·이용에 동의해주세요.",
   }),
+}).superRefine((data, ctx) => {
+  const availableSubTests = TEST_CATALOG.find((t) => t.slug === data.testType)?.subTests;
+  if (availableSubTests && availableSubTests.length > 0 && data.subTests.length === 0) {
+    ctx.addIssue({
+      code: "custom",
+      path: ["subTests"],
+      message: "하위 검사를 1개 이상 선택해주세요.",
+    });
+  }
 });
 
 export type ApplicationInput = z.infer<typeof applicationSchema>;
@@ -72,6 +83,7 @@ export type ApplicationRecord = {
   phone: string;
   email: string;
   test_type: string;
+  sub_tests: string[] | null;
   consult_method: string;
   preferred_date: string;
   message: string | null;

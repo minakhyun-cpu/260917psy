@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "마음결 심리상담센터",
-    template: "%s | 마음결 심리상담센터",
+    default: "마지 마인드랩",
+    template: "%s | 마지 마인드랩",
   },
   description:
-    "성격검사, 진로적성검사, 정서·스트레스 척도 등 심리검사와 1:1 해석상담을 온라인으로 신청하세요.",
+    "성격검사, 자녀 검사, 정서·스트레스 척도 등 심리검사와 1:1 해석상담을 온라인으로 신청하세요.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -29,7 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="ko"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-white text-slate-900">
+      <body className="flex min-h-full flex-col bg-background text-foreground">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

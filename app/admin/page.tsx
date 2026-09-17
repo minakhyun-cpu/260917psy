@@ -72,6 +72,7 @@ export default async function AdminPage() {
                 <th className="px-4 py-3">연락처</th>
                 <th className="px-4 py-3">이메일</th>
                 <th className="px-4 py-3">검사 종류</th>
+                <th className="px-4 py-3">하위 검사</th>
                 <th className="px-4 py-3">상담 방식</th>
                 <th className="px-4 py-3">희망 일정</th>
                 <th className="px-4 py-3">상태</th>
@@ -94,6 +95,11 @@ export default async function AdminPage() {
                   </td>
                   <td className="whitespace-nowrap px-4 py-3 text-slate-600">
                     {getLabel(TEST_TYPES, app.test_type)}
+                  </td>
+                  <td className="px-4 py-3 text-slate-600">
+                    {app.sub_tests && app.sub_tests.length > 0
+                      ? app.sub_tests.join(", ")
+                      : "-"}
                   </td>
                   <td className="whitespace-nowrap px-4 py-3 text-slate-600">
                     {getLabel(CONSULT_METHODS, app.consult_method)}

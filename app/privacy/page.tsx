@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "개인정보처리방침",
-  description: "마음결 심리상담센터 개인정보처리방침",
+  description: "마지 마인드랩 개인정보처리방침",
 };
 
 export default function PrivacyPage() {
@@ -10,7 +10,7 @@ export default function PrivacyPage() {
     <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
       <h1 className="text-3xl font-bold text-slate-900">개인정보처리방침</h1>
       <p className="mt-3 text-sm text-slate-500">
-        마음결 심리상담센터(이하 &ldquo;센터&rdquo;)는 이용자의 개인정보를 중요시하며,
+        마지 마인드랩(이하 &ldquo;마인드랩&rdquo;)은 이용자의 개인정보를 중요시하며,
         관련 법령을 준수합니다. 본 방침은 상담 신청 페이지를 통해 수집되는
         개인정보에 한해 적용됩니다.
       </p>
@@ -21,7 +21,7 @@ export default function PrivacyPage() {
             1. 수집하는 개인정보 항목 및 수집 방법
           </h2>
           <p className="mt-2">
-            센터는 상담 신청 접수를 위해 아래 항목을 신청 폼을 통해 이용자가
+            마인드랩은 상담 신청 접수를 위해 아래 항목을 신청 폼을 통해 이용자가
             직접 입력하는 방식으로 수집합니다.
           </p>
           <ul className="mt-2 list-inside list-disc">
@@ -57,7 +57,7 @@ export default function PrivacyPage() {
             4. 개인정보의 제3자 제공
           </h2>
           <p className="mt-2">
-            센터는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않으며,
+            마인드랩은 이용자의 개인정보를 원칙적으로 외부에 제공하지 않으며,
             법령에 근거가 있거나 이용자가 사전에 동의한 경우에 한하여
             제공합니다.
           </p>
@@ -68,7 +68,7 @@ export default function PrivacyPage() {
             5. 개인정보 처리의 위탁
           </h2>
           <p className="mt-2">
-            센터는 안정적인 서비스 제공을 위해 데이터 저장 및 이메일 발송
+            마인드랩은 안정적인 서비스 제공을 위해 데이터 저장 및 이메일 발송
             업무를 외부 업체에 위탁할 수 있으며, 위탁받은 업체가 개인정보
             보호 관련 법령을 준수하도록 관리·감독합니다.
           </p>
@@ -81,7 +81,7 @@ export default function PrivacyPage() {
           <p className="mt-2">
             이용자는 언제든지 자신의 개인정보에 대한 열람, 정정, 삭제,
             처리정지를 요청할 수 있으며, 이는 신청 시 남기신 연락처 또는
-            이메일을 통해 센터에 문의하여 처리할 수 있습니다.
+            이메일을 통해 마인드랩에 문의하여 처리할 수 있습니다.
           </p>
         </section>
 
@@ -90,7 +90,7 @@ export default function PrivacyPage() {
             7. 개인정보의 안전성 확보 조치
           </h2>
           <p className="mt-2">
-            센터는 개인정보 전송 시 암호화 통신(HTTPS)을 적용하고, 접근
+            마인드랩은 개인정보 전송 시 암호화 통신(HTTPS)을 적용하고, 접근
             권한을 최소한의 인원으로 제한하는 등 개인정보가 분실·도난·유출
             되지 않도록 필요한 기술적·관리적 조치를 취하고 있습니다.
           </p>

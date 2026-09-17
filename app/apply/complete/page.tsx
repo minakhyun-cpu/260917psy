@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function ApplyCompletePage() {
   return (
     <div className="mx-auto max-w-xl px-4 py-24 text-center sm:px-6">
-      <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-teal-100 text-2xl text-teal-700">
+      <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand-100 text-2xl text-brand-700">
         ✓
       </div>
       <h1 className="mt-6 text-2xl font-bold text-slate-900">
