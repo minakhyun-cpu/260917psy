@@ -32,8 +32,8 @@ const COUNSELORS = [
   },
   {
     name: "박도윤 상담사",
-    role: "진로상담전문가",
-    bio: "진로적성검사 해석과 진로 설계 상담에 다년간의 경험을 가지고 있습니다.",
+    role: "아동심리전문가",
+    bio: "자녀 검사(MLST, JTCI 등) 해석과 학부모 상담에 다년간의 경험을 가지고 있습니다.",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function HomePage() {
               <br className="hidden sm:block" /> 마지 마인드랩과 함께
             </h1>
             <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-slate-600 lg:mx-0">
-              성격, 진로적성, 정서·스트레스까지. 표준화된 심리검사와 1:1 해석상담으로
+              성격, 자녀, 정서·스트레스까지. 표준화된 심리검사와 1:1 해석상담으로
               나를 더 깊이 이해하는 따뜻한 시간을 가져보세요.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">

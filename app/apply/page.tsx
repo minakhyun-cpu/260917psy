@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const VALID_TEST_TYPES: ApplicationInput["testType"][] = [
   "personality",
-  "career",
+  "child",
   "stress",
   "other",
 ];

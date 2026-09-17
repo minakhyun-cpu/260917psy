@@ -22,9 +22,22 @@ export default function TestTypeCard({ item }: { item: TestCatalogItem }) {
           <dd>{item.format}</dd>
         </div>
       </dl>
-      <p className="mt-4 flex-1 text-sm leading-6 text-slate-600">
+      <p className="mt-4 text-sm leading-6 text-slate-600">
         {item.description}
       </p>
+      {item.subTests && item.subTests.length > 0 && (
+        <div className="mt-4 flex flex-wrap gap-1.5">
+          {item.subTests.map((subTest) => (
+            <span
+              key={subTest}
+              className="rounded-full bg-brand-50 px-2.5 py-1 text-xs font-medium text-brand-700"
+            >
+              {subTest}
+            </span>
+          ))}
+        </div>
+      )}
+      <div className="flex-1" />
       <Link
         href={`/apply?testType=${item.slug}`}
         className="mt-5 inline-flex items-center justify-center rounded-full border border-brand-600 px-4 py-2 text-sm font-semibold text-brand-700 transition-colors hover:bg-brand-50"

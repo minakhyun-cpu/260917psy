@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const TEST_TYPES = [
   { value: "personality", label: "성격검사" },
-  { value: "career", label: "진로적성검사" },
+  { value: "child", label: "자녀 검사" },
   { value: "stress", label: "정서·스트레스 척도" },
   { value: "other", label: "기타" },
 ] as const;
@@ -31,7 +31,7 @@ export const applicationSchema = z.object({
     .max(20, "연락처를 정확히 입력해주세요.")
     .regex(/^[0-9-]+$/, "숫자와 '-'만 입력해주세요."),
   email: z.string().trim().min(1, "이메일을 입력해주세요.").email("올바른 이메일 주소를 입력해주세요."),
-  testType: z.enum(["personality", "career", "stress", "other"], {
+  testType: z.enum(["personality", "child", "stress", "other"], {
     message: "희망 검사 종류를 선택해주세요.",
   }),
   consultMethod: z.enum(["online", "offline"], {

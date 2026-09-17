@@ -5,7 +5,7 @@ import { TEST_TYPE_ICONS } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "심리검사 상세 안내",
-  description: "성격검사, 진로적성검사, 정서·스트레스 척도 등 각 심리검사의 목적과 진행 방식을 안내합니다.",
+  description: "성격검사, 자녀 검사, 정서·스트레스 척도 등 각 심리검사의 목적과 진행 방식을 안내합니다.",
 };
 
 export default function TestsPage() {
@@ -51,6 +51,24 @@ export default function TestsPage() {
             <p className="mt-5 text-sm leading-7 text-slate-600">
               {item.description}
             </p>
+
+            {item.subTests && item.subTests.length > 0 && (
+              <div className="mt-5">
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+                  하위 검사
+                </p>
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {item.subTests.map((subTest) => (
+                    <span
+                      key={subTest}
+                      className="rounded-full bg-brand-50 px-2.5 py-1 text-xs font-medium text-brand-700"
+                    >
+                      {subTest}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <div className="mt-5">
               <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">

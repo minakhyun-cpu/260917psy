@@ -81,6 +81,26 @@ export function HeartPulseIcon({ className }: IconProps) {
   );
 }
 
+export function SmileyIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="8.5" />
+      <circle cx="9" cy="10.3" r="1.1" fill="currentColor" stroke="none" />
+      <circle cx="15" cy="10.3" r="1.1" fill="currentColor" stroke="none" />
+      <path d="M8.3 14.2c1 1.3 2.3 2 3.7 2s2.7-.7 3.7-2" />
+    </svg>
+  );
+}
+
 export function SparkleIcon({ className }: IconProps) {
   return (
     <svg
@@ -97,7 +117,7 @@ export function SparkleIcon({ className }: IconProps) {
 
 export const TEST_TYPE_ICONS = {
   personality: FlowerIcon,
-  career: CompassIcon,
+  child: SmileyIcon,
   stress: HeartPulseIcon,
   other: SparkleIcon,
 } satisfies Record<string, (props: IconProps) => ReturnType<typeof FlowerIcon>>;
