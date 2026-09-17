@@ -14,7 +14,7 @@ import { generateBurnoutPlan } from "@/lib/gemini";
 const STORAGE_KEY = "gemini_api_key";
 
 const inputClasses =
-  "w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 shadow-sm focus:border-teal-600 focus:outline-none focus:ring-1 focus:ring-teal-600";
+  "w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600";
 const errorTextClasses = "mt-1 text-sm text-red-600";
 const labelClasses = "block text-sm font-medium text-slate-700";
 
@@ -114,7 +114,7 @@ export default function BurnoutRecoveryTool() {
               href="https://aistudio.google.com/apikey"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-teal-700 underline underline-offset-2"
+              className="font-medium text-brand-700 underline underline-offset-2"
             >
               Google AI Studio에서 무료로 키 발급받기
             </a>
@@ -131,7 +131,7 @@ export default function BurnoutRecoveryTool() {
               type="checkbox"
               checked={rememberKey}
               onChange={(e) => setRememberKey(e.target.checked)}
-              className="h-4 w-4 rounded border-slate-300 text-teal-600 focus:ring-teal-600"
+              className="h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-600"
             />
             <label htmlFor="rememberKey" className="text-sm text-slate-600">
               이 브라우저에 API 키 저장 (공용 기기에서는 권장하지 않습니다)
@@ -254,15 +254,15 @@ export default function BurnoutRecoveryTool() {
         <button
           type="submit"
           disabled={isGenerating}
-          className="w-full rounded-full bg-teal-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-teal-700 disabled:cursor-not-allowed disabled:opacity-60"
+          className="w-full rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isGenerating ? "회복 플랜 생성 중..." : "AI 회복 플랜 받기"}
         </button>
       </form>
 
       {result && (
-        <div className="rounded-2xl border border-teal-200 bg-teal-50 p-6">
-          <h2 className="text-sm font-semibold text-teal-800">
+        <div className="rounded-2xl border border-brand-200 bg-brand-50 p-6">
+          <h2 className="text-sm font-semibold text-brand-800">
             AI가 제안하는 회복 플랜
           </h2>
           <p className="mt-3 whitespace-pre-wrap text-sm leading-7 text-slate-700">

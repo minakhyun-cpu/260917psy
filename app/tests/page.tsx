@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { TEST_CATALOG } from "@/lib/testCatalog";
+import { TEST_TYPE_ICONS } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "심리검사 상세 안내",
@@ -16,14 +17,19 @@ export default function TestsPage() {
       </p>
 
       <div className="mt-10 space-y-10">
-        {TEST_CATALOG.map((item) => (
+        {TEST_CATALOG.map((item) => {
+          const Icon = TEST_TYPE_ICONS[item.slug];
+          return (
           <article
             key={item.slug}
             id={item.slug}
-            className="rounded-2xl border border-slate-200 p-6 sm:p-8"
+            className="rounded-2xl border border-brand-100 bg-white p-6 sm:p-8"
           >
-            <h2 className="text-xl font-bold text-slate-900">{item.title}</h2>
-            <p className="mt-1 text-sm font-medium text-teal-700">
+            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-50 text-brand-700">
+              <Icon className="h-6 w-6" />
+            </span>
+            <h2 className="mt-4 text-xl font-bold text-slate-900">{item.title}</h2>
+            <p className="mt-1 text-sm font-medium text-brand-700">
               {item.tagline}
             </p>
 
@@ -59,12 +65,13 @@ export default function TestsPage() {
 
             <Link
               href={`/apply?testType=${item.slug}`}
-              className="mt-6 inline-flex items-center justify-center rounded-full bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-teal-700"
+              className="mt-6 inline-flex items-center justify-center rounded-full bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"
             >
               이 검사로 상담 신청하기
             </Link>
           </article>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

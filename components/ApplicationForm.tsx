@@ -13,7 +13,7 @@ import {
 import { submitApplication } from "@/app/apply/actions";
 
 const inputClasses =
-  "w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 shadow-sm focus:border-teal-600 focus:outline-none focus:ring-1 focus:ring-teal-600";
+  "w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600";
 const errorTextClasses = "mt-1 text-sm text-red-600";
 const labelClasses = "block text-sm font-medium text-slate-700";
 
@@ -227,12 +227,12 @@ export default function ApplicationForm({
         )}
       </div>
 
-      <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
+      <div className="rounded-lg border border-brand-100 bg-brand-50/40 p-4">
         <div className="flex items-start gap-3">
           <input
             id="privacyConsent"
             type="checkbox"
-            className="mt-0.5 h-4 w-4 rounded border-slate-300 text-teal-600 focus:ring-teal-600"
+            className="mt-0.5 h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-600"
             aria-invalid={!!errors.privacyConsent}
             aria-describedby={
               errors.privacyConsent ? "privacyConsent-error" : undefined
@@ -246,7 +246,7 @@ export default function ApplicationForm({
               href="/privacy"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-teal-700 underline underline-offset-2"
+              className="font-medium text-brand-700 underline underline-offset-2"
             >
               개인정보처리방침
             </a>
@@ -273,7 +273,7 @@ export default function ApplicationForm({
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-full bg-teal-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-teal-700 disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isSubmitting ? "제출 중..." : "상담 신청하기"}
       </button>

@@ -16,7 +16,7 @@ export default function RecoveryPage() {
         간단한 체크인을 남기면 AI가 오늘 바로 실천할 수 있는 회복 행동을
         제안해드립니다. 본인의 Gemini API 키를 입력해 바로 사용해보세요.
         보다 깊은 대화가 필요하다면{" "}
-        <Link href="/apply" className="font-medium text-teal-700 underline underline-offset-2">
+        <Link href="/apply" className="font-medium text-brand-700 underline underline-offset-2">
           전문 상담사와의 해석상담
         </Link>
         도 신청할 수 있습니다.

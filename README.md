@@ -1,4 +1,4 @@
-# 마음결 심리상담센터 — 심리검사 & 해석상담 신청
+# 마지 마인드랩 — 심리검사 & 해석상담 신청
 
 성격검사, 진로적성검사, 정서·스트레스 척도 등 심리검사와 1:1 해석상담 서비스를
 소개하고, 방문자가 온라인으로 상담을 신청할 수 있는 반응형 웹앱입니다. 결제
@@ -32,7 +32,7 @@ app/
   admin/login/page.tsx     관리자 로그인
   recovery/page.tsx        AI 번아웃 회복 솔루션 (사용자 Gemini API 키 입력)
 proxy.ts                  /admin 라우트 보호 (Next.js 16의 middleware → proxy)
-components/               UI 컴포넌트
+components/               UI 컴포넌트, 아이콘(icons.tsx), 일러스트(illustrations/)
 lib/                      Supabase/이메일 클라이언트, 검사 카탈로그, 관리자 인증, Gemini 클라이언트(브라우저 전용)
 types/application.ts      신청 폼 Zod 스키마 및 타입 (+ 유닛 테스트)
 types/burnout.ts           AI 번아웃 회복 체크인 Zod 스키마 및 타입 (+ 유닛 테스트)
