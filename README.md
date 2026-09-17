@@ -4,6 +4,11 @@
 소개하고, 방문자가 온라인으로 상담을 신청할 수 있는 반응형 웹앱입니다. 결제
 기능과 검사 자체의 온라인 응시는 이 앱의 범위에 포함되지 않습니다.
 
+`/recovery` 페이지에서는 Gemini(`gemini-3.5-flash-lite`) 기반의 AI 번아웃
+회복 솔루션도 제공합니다. 사용자가 자신의 Gemini API 키를 직접 입력해
+사용하는 방식이며, 키는 브라우저에서 Google API로 바로 전달되고 서버로는
+전송되지 않습니다.
+
 ## 기술 스택
 
 - Next.js 16 (App Router) + TypeScript
@@ -25,10 +30,12 @@ app/
   privacy/page.tsx        개인정보처리방침
   admin/page.tsx          관리자 대시보드 (신청 목록/상태 변경, 선택 기능)
   admin/login/page.tsx     관리자 로그인
+  recovery/page.tsx        AI 번아웃 회복 솔루션 (사용자 Gemini API 키 입력)
 proxy.ts                  /admin 라우트 보호 (Next.js 16의 middleware → proxy)
 components/               UI 컴포넌트
-lib/                      Supabase/이메일 클라이언트, 검사 카탈로그, 관리자 인증
+lib/                      Supabase/이메일 클라이언트, 검사 카탈로그, 관리자 인증, Gemini 클라이언트(브라우저 전용)
 types/application.ts      신청 폼 Zod 스키마 및 타입 (+ 유닛 테스트)
+types/burnout.ts           AI 번아웃 회복 체크인 Zod 스키마 및 타입 (+ 유닛 테스트)
 supabase/schema.sql        Supabase 테이블 스키마
 ```
 

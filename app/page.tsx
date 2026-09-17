@@ -148,6 +148,29 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
+        <div className="flex flex-col items-start justify-between gap-6 rounded-2xl border border-teal-200 bg-teal-50 p-8 sm:flex-row sm:items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-wide text-teal-700">
+              New
+            </p>
+            <h2 className="mt-1 text-2xl font-bold text-slate-900">
+              AI 번아웃 회복 솔루션
+            </h2>
+            <p className="mt-2 max-w-lg text-sm leading-6 text-slate-600">
+              간단한 체크인만 남기면 AI가 지금 바로 실천할 수 있는 회복
+              루틴을 제안해드립니다. 본인의 Gemini API 키로 무료로 이용해보세요.
+            </p>
+          </div>
+          <Link
+            href="/recovery"
+            className="shrink-0 rounded-full bg-teal-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-teal-700"
+          >
+            AI 회복 플랜 받아보기
+          </Link>
+        </div>
+      </section>
+
       <section id="faq" className="bg-slate-50">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
           <h2 className="text-2xl font-bold text-slate-900">자주 묻는 질문</h2>

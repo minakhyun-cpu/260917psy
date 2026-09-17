@@ -3,6 +3,7 @@ import Link from "next/link";
 const NAV_LINKS = [
   { href: "/#tests", label: "심리검사" },
   { href: "/#process", label: "상담 절차" },
+  { href: "/recovery", label: "AI 번아웃 회복" },
   { href: "/#faq", label: "자주 묻는 질문" },
 ];
 
