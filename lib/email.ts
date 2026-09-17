@@ -41,6 +41,9 @@ export async function sendApplicationNotification(application: ApplicationInput)
       `연락처: ${application.phone}`,
       `이메일: ${application.email}`,
       `희망 검사: ${testTypeLabel}`,
+      application.subTests.length > 0
+        ? `하위 검사: ${application.subTests.join(", ")}`
+        : undefined,
       `상담 방식: ${consultMethodLabel}`,
       `희망 일정: ${application.preferredDate}`,
       application.message ? `남기신 메시지: ${application.message}` : undefined,

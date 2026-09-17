@@ -10,6 +10,7 @@ import {
   CONSULT_METHODS,
   type ApplicationInput,
 } from "@/types/application";
+import { TEST_CATALOG } from "@/lib/testCatalog";
 import { submitApplication } from "@/app/apply/actions";
 
 const inputClasses =
@@ -28,6 +29,8 @@ export default function ApplicationForm({
   const {
     register,
     handleSubmit,
+    watch,
+    setValue,
     formState: { errors, isSubmitting },
   } = useForm<ApplicationInput>({
     resolver: zodResolver(applicationSchema),
@@ -36,12 +39,18 @@ export default function ApplicationForm({
       phone: "",
       email: "",
       testType: defaultTestType,
+      subTests: [],
       consultMethod: undefined,
       preferredDate: "",
       message: "",
       privacyConsent: undefined,
     },
   });
+
+  const selectedTestType = watch("testType");
+  const availableSubTests = TEST_CATALOG.find(
+    (t) => t.slug === selectedTestType,
+  )?.subTests;
 
   const onSubmit = async (data: ApplicationInput) => {
     setSubmitError(null);
@@ -137,7 +146,9 @@ export default function ApplicationForm({
             defaultValue={defaultTestType ?? ""}
             aria-invalid={!!errors.testType}
             aria-describedby={errors.testType ? "testType-error" : undefined}
-            {...register("testType")}
+            {...register("testType", {
+              onChange: () => setValue("subTests", []),
+            })}
           >
             <option value="" disabled>
               선택해주세요
@@ -185,6 +196,40 @@ export default function ApplicationForm({
           )}
         </div>
       </div>
+
+      {availableSubTests && availableSubTests.length > 0 && (
+        <div>
+          <span className={labelClasses}>
+            하위 검사 <span className="text-red-600">*</span>{" "}
+            <span className="font-normal text-slate-400">(중복 선택 가능)</span>
+          </span>
+          <div
+            className="mt-2 flex flex-wrap gap-x-5 gap-y-2"
+            role="group"
+            aria-describedby={errors.subTests ? "subTests-error" : undefined}
+          >
+            {availableSubTests.map((subTest) => (
+              <label
+                key={subTest}
+                className="flex items-center gap-2 text-sm text-slate-700"
+              >
+                <input
+                  type="checkbox"
+                  value={subTest}
+                  className="h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-600"
+                  {...register("subTests")}
+                />
+                {subTest}
+              </label>
+            ))}
+          </div>
+          {errors.subTests && (
+            <p id="subTests-error" className={errorTextClasses}>
+              {errors.subTests.message}
+            </p>
+          )}
+        </div>
+      )}
 
       <div>
         <label htmlFor="preferredDate" className={labelClasses}>
