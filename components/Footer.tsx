@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LeafIcon } from "@/components/icons";
+import LogoMark from "@/components/LogoMark";
 
 export default function Footer() {
   return (
@@ -8,9 +8,7 @@ export default function Footer() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="flex items-center gap-2 font-semibold text-stone-700">
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-600 text-white">
-                <LeafIcon className="h-3.5 w-3.5" />
-              </span>
+              <LogoMark className="h-7 w-7" />
               마지 마인드랩
             </p>
             <p className="mt-2">

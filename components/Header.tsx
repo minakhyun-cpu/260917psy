@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LeafIcon } from "@/components/icons";
+import LogoMark from "@/components/LogoMark";
 
 const NAV_LINKS = [
   { href: "/#tests", label: "심리검사" },
@@ -13,9 +13,7 @@ export default function Header() {
     <header className="sticky top-0 z-40 border-b border-brand-100 bg-white/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-2 text-lg font-bold text-stone-900">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-600 text-white">
-            <LeafIcon className="h-4 w-4" />
-          </span>
+          <LogoMark className="h-9 w-9" />
           마지 마인드랩
         </Link>
         <nav className="hidden items-center gap-6 text-sm font-medium text-stone-600 md:flex">
