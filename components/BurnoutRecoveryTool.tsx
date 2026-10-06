@@ -14,9 +14,9 @@ import { generateBurnoutPlan } from "@/lib/gemini";
 const STORAGE_KEY = "gemini_api_key";
 
 const inputClasses =
-  "w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600";
+  "w-full rounded-lg border border-stone-300 px-3 py-2 text-sm text-stone-900 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600";
 const errorTextClasses = "mt-1 text-sm text-red-600";
-const labelClasses = "block text-sm font-medium text-slate-700";
+const labelClasses = "block text-sm font-medium text-stone-700";
 
 export default function BurnoutRecoveryTool() {
   const [rememberKey, setRememberKey] = useState(false);
@@ -107,7 +107,7 @@ export default function BurnoutRecoveryTool() {
             aria-describedby={errors.apiKey ? "apiKey-error" : "apiKey-help"}
             {...register("apiKey")}
           />
-          <p id="apiKey-help" className="mt-1 text-xs text-slate-500">
+          <p id="apiKey-help" className="mt-1 text-xs text-stone-500">
             키는 서버로 전송되지 않고 이 브라우저에서 Google API로 직접
             전달됩니다.{" "}
             <a
@@ -131,9 +131,9 @@ export default function BurnoutRecoveryTool() {
               type="checkbox"
               checked={rememberKey}
               onChange={(e) => setRememberKey(e.target.checked)}
-              className="h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-600"
+              className="h-4 w-4 rounded border-stone-300 text-brand-600 focus:ring-brand-600"
             />
-            <label htmlFor="rememberKey" className="text-sm text-slate-600">
+            <label htmlFor="rememberKey" className="text-sm text-stone-600">
               이 브라우저에 API 키 저장 (공용 기기에서는 권장하지 않습니다)
             </label>
           </div>
@@ -254,7 +254,7 @@ export default function BurnoutRecoveryTool() {
         <button
           type="submit"
           disabled={isGenerating}
-          className="w-full rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-60"
+          className="w-full rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_20px_-6px_rgba(217,96,58,0.45)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-[0_12px_24px_-6px_rgba(217,96,58,0.55)] active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isGenerating ? "회복 플랜 생성 중..." : "AI 회복 플랜 받기"}
         </button>
@@ -265,7 +265,7 @@ export default function BurnoutRecoveryTool() {
           <h2 className="text-sm font-semibold text-brand-800">
             AI가 제안하는 회복 플랜
           </h2>
-          <p className="mt-3 whitespace-pre-wrap text-sm leading-7 text-slate-700">
+          <p className="mt-3 whitespace-pre-wrap text-sm leading-7 text-stone-700">
             {result}
           </p>
         </div>

@@ -8,16 +8,16 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
-      <h1 className="text-3xl font-bold text-slate-900">개인정보처리방침</h1>
-      <p className="mt-3 text-sm text-slate-500">
+      <h1 className="text-3xl font-semibold text-stone-900">개인정보처리방침</h1>
+      <p className="mt-3 text-sm text-stone-500">
         마지 마인드랩(이하 &ldquo;마인드랩&rdquo;)은 이용자의 개인정보를 중요시하며,
         관련 법령을 준수합니다. 본 방침은 상담 신청 페이지를 통해 수집되는
         개인정보에 한해 적용됩니다.
       </p>
 
-      <div className="prose prose-slate mt-10 max-w-none space-y-8 text-sm leading-7 text-slate-700">
+      <div className="prose prose-slate mt-10 max-w-none space-y-8 text-sm leading-7 text-stone-700">
         <section>
-          <h2 className="text-lg font-bold text-slate-900">
+          <h2 className="text-lg font-semibold text-stone-900">
             1. 수집하는 개인정보 항목 및 수집 방법
           </h2>
           <p className="mt-2">
@@ -31,7 +31,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-slate-900">
+          <h2 className="text-lg font-semibold text-stone-900">
             2. 개인정보의 수집 및 이용 목적
           </h2>
           <p className="mt-2">
@@ -42,7 +42,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-slate-900">
+          <h2 className="text-lg font-semibold text-stone-900">
             3. 개인정보의 보유 및 이용 기간
           </h2>
           <p className="mt-2">
@@ -53,7 +53,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-slate-900">
+          <h2 className="text-lg font-semibold text-stone-900">
             4. 개인정보의 제3자 제공
           </h2>
           <p className="mt-2">
@@ -64,7 +64,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-slate-900">
+          <h2 className="text-lg font-semibold text-stone-900">
             5. 개인정보 처리의 위탁
           </h2>
           <p className="mt-2">
@@ -75,7 +75,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-slate-900">
+          <h2 className="text-lg font-semibold text-stone-900">
             6. 정보주체의 권리와 행사 방법
           </h2>
           <p className="mt-2">
@@ -86,7 +86,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-slate-900">
+          <h2 className="text-lg font-semibold text-stone-900">
             7. 개인정보의 안전성 확보 조치
           </h2>
           <p className="mt-2">
@@ -97,7 +97,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-slate-900">
+          <h2 className="text-lg font-semibold text-stone-900">
             8. 개인정보처리방침의 변경
           </h2>
           <p className="mt-2">

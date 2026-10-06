@@ -4,10 +4,10 @@ import { LeafIcon } from "@/components/icons";
 export default function Footer() {
   return (
     <footer className="border-t border-brand-100 bg-brand-50/40">
-      <div className="mx-auto max-w-5xl px-4 py-10 text-sm text-slate-500 sm:px-6">
+      <div className="mx-auto max-w-5xl px-4 py-10 text-sm text-stone-500 sm:px-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="flex items-center gap-2 font-semibold text-slate-700">
+            <p className="flex items-center gap-2 font-semibold text-stone-700">
               <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-600 text-white">
                 <LeafIcon className="h-3.5 w-3.5" />
               </span>
@@ -27,7 +27,7 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-        <p className="mt-6 text-xs text-slate-400">
+        <p className="mt-6 text-xs text-stone-400">
           © {new Date().getFullYear()} 마지 마인드랩. All rights reserved.
         </p>
       </div>

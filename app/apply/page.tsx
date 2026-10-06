@@ -29,8 +29,8 @@ export default async function ApplyPage({
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6">
-      <h1 className="text-3xl font-bold text-slate-900">상담 신청</h1>
-      <p className="mt-3 text-sm leading-6 text-slate-600">
+      <h1 className="text-3xl font-semibold text-stone-900">상담 신청</h1>
+      <p className="mt-3 text-sm leading-6 text-stone-600">
         아래 정보를 남겨주시면 담당 상담사가 영업일 기준 1~2일 이내에
         연락드립니다. 결제는 이 단계에서 진행되지 않습니다.
       </p>

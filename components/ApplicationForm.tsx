@@ -14,9 +14,9 @@ import { TEST_CATALOG } from "@/lib/testCatalog";
 import { submitApplication } from "@/app/apply/actions";
 
 const inputClasses =
-  "w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600";
+  "w-full rounded-lg border border-stone-300 px-3 py-2 text-sm text-stone-900 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600";
 const errorTextClasses = "mt-1 text-sm text-red-600";
-const labelClasses = "block text-sm font-medium text-slate-700";
+const labelClasses = "block text-sm font-medium text-stone-700";
 
 export default function ApplicationForm({
   defaultTestType,
@@ -201,7 +201,7 @@ export default function ApplicationForm({
         <div>
           <span className={labelClasses}>
             하위 검사 <span className="text-red-600">*</span>{" "}
-            <span className="font-normal text-slate-400">(중복 선택 가능)</span>
+            <span className="font-normal text-stone-400">(중복 선택 가능)</span>
           </span>
           <div
             className="mt-2 flex flex-wrap gap-x-5 gap-y-2"
@@ -211,12 +211,12 @@ export default function ApplicationForm({
             {availableSubTests.map((subTest) => (
               <label
                 key={subTest}
-                className="flex items-center gap-2 text-sm text-slate-700"
+                className="flex items-center gap-2 text-sm text-stone-700"
               >
                 <input
                   type="checkbox"
                   value={subTest}
-                  className="h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-600"
+                  className="h-4 w-4 rounded border-stone-300 text-brand-600 focus:ring-brand-600"
                   {...register("subTests")}
                 />
                 {subTest}
@@ -277,14 +277,14 @@ export default function ApplicationForm({
           <input
             id="privacyConsent"
             type="checkbox"
-            className="mt-0.5 h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-600"
+            className="mt-0.5 h-4 w-4 rounded border-stone-300 text-brand-600 focus:ring-brand-600"
             aria-invalid={!!errors.privacyConsent}
             aria-describedby={
               errors.privacyConsent ? "privacyConsent-error" : undefined
             }
             {...register("privacyConsent")}
           />
-          <label htmlFor="privacyConsent" className="text-sm text-slate-700">
+          <label htmlFor="privacyConsent" className="text-sm text-stone-700">
             (필수) 상담 신청 접수 및 연락을 위한 개인정보 수집·이용에
             동의합니다. 자세한 내용은{" "}
             <a
@@ -318,7 +318,7 @@ export default function ApplicationForm({
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_20px_-6px_rgba(217,96,58,0.45)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-[0_12px_24px_-6px_rgba(217,96,58,0.55)] active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isSubmitting ? "제출 중..." : "상담 신청하기"}
       </button>

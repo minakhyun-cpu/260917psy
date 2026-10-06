@@ -6,23 +6,23 @@ export default function TestTypeCard({ item }: { item: TestCatalogItem }) {
   const Icon = TEST_TYPE_ICONS[item.slug];
 
   return (
-    <div className="flex flex-col rounded-2xl border border-brand-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+    <div className="flex flex-col rounded-2xl border border-brand-100 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand-200 hover:shadow-[0_16px_32px_-12px_rgba(122,51,32,0.25)]">
       <span className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-50 text-brand-700">
         <Icon className="h-6 w-6" />
       </span>
-      <h3 className="mt-4 text-lg font-bold text-slate-900">{item.title}</h3>
+      <h3 className="mt-4 text-lg font-semibold text-stone-900">{item.title}</h3>
       <p className="mt-1 text-sm text-brand-700">{item.tagline}</p>
-      <dl className="mt-4 space-y-1 text-sm text-slate-500">
+      <dl className="mt-4 space-y-1 text-sm text-stone-500">
         <div className="flex gap-2">
-          <dt className="w-16 shrink-0 text-slate-400">소요시간</dt>
+          <dt className="w-16 shrink-0 text-stone-400">소요시간</dt>
           <dd>{item.duration}</dd>
         </div>
         <div className="flex gap-2">
-          <dt className="w-16 shrink-0 text-slate-400">진행방식</dt>
+          <dt className="w-16 shrink-0 text-stone-400">진행방식</dt>
           <dd>{item.format}</dd>
         </div>
       </dl>
-      <p className="mt-4 text-sm leading-6 text-slate-600">
+      <p className="mt-4 text-sm leading-6 text-stone-600">
         {item.description}
       </p>
       {item.subTests && item.subTests.length > 0 && (

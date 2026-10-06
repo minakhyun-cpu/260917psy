@@ -69,24 +69,24 @@ export default function HomePage() {
             <p className="text-sm font-semibold uppercase tracking-wide text-brand-700">
               심리검사 &amp; 해석상담
             </p>
-            <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            <h1 className="mt-3 text-4xl font-semibold tracking-tight text-stone-900 sm:text-5xl">
               나를 이해하는 첫걸음,
               <br className="hidden sm:block" /> 마지 마인드랩과 함께
             </h1>
-            <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-slate-600 lg:mx-0">
+            <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-stone-600 lg:mx-0">
               성격, 자녀, 정서·스트레스까지. 표준화된 심리검사와 1:1 해석상담으로
               나를 더 깊이 이해하는 따뜻한 시간을 가져보세요.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
               <Link
                 href="/apply"
-                className="w-full rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 sm:w-auto"
+                className="w-full rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_20px_-6px_rgba(217,96,58,0.45)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-[0_12px_24px_-6px_rgba(217,96,58,0.55)] active:translate-y-0 sm:w-auto"
               >
                 상담 신청하기
               </Link>
               <Link
                 href="#tests"
-                className="w-full rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 sm:w-auto"
+                className="w-full rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-semibold text-stone-700 transition-all duration-200 hover:-translate-y-0.5 hover:border-stone-400 hover:shadow-md sm:w-auto"
               >
                 검사 종류 살펴보기
               </Link>
@@ -97,8 +97,8 @@ export default function HomePage() {
       </section>
 
       <section id="tests" className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
-        <h2 className="text-2xl font-bold text-slate-900">심리검사 종류</h2>
-        <p className="mt-2 text-sm text-slate-600">
+        <h2 className="text-2xl font-semibold text-stone-900">심리검사 종류</h2>
+        <p className="mt-2 text-sm text-stone-600">
           목적에 맞는 검사를 선택하시면, 신청 폼에 자동으로 반영됩니다.
         </p>
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -118,7 +118,7 @@ export default function HomePage() {
 
       <section id="process" className="bg-brand-50/50">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
-          <h2 className="text-2xl font-bold text-slate-900">해석상담 진행 절차</h2>
+          <h2 className="text-2xl font-semibold text-stone-900">해석상담 진행 절차</h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {PROCESS_STEPS.map((step, index) => (
               <div
@@ -128,8 +128,8 @@ export default function HomePage() {
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">
                   {index + 1}
                 </span>
-                <h3 className="mt-3 font-bold text-slate-900">{step.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">
+                <h3 className="mt-3 font-semibold text-stone-900">{step.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-stone-600">
                   {step.description}
                 </p>
               </div>
@@ -139,7 +139,7 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
-        <h2 className="text-2xl font-bold text-slate-900">상담사 소개</h2>
+        <h2 className="text-2xl font-semibold text-stone-900">상담사 소개</h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
           {COUNSELORS.map((counselor) => (
             <div
@@ -150,9 +150,9 @@ export default function HomePage() {
                 {counselor.name.charAt(0)}
               </span>
               <div>
-                <p className="font-bold text-slate-900">{counselor.name}</p>
+                <p className="font-bold text-stone-900">{counselor.name}</p>
                 <p className="mt-1 text-sm text-brand-700">{counselor.role}</p>
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-stone-600">
                   {counselor.bio}
                 </p>
               </div>
@@ -170,17 +170,17 @@ export default function HomePage() {
             <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-brand-700">
               New
             </p>
-            <h2 className="mt-1 text-2xl font-bold text-slate-900">
+            <h2 className="mt-1 text-2xl font-semibold text-stone-900">
               AI 번아웃 회복 솔루션
             </h2>
-            <p className="mt-2 max-w-lg text-sm leading-6 text-slate-600">
+            <p className="mt-2 max-w-lg text-sm leading-6 text-stone-600">
               간단한 체크인만 남기면 AI가 지금 바로 실천할 수 있는 회복
               루틴을 제안해드립니다. 본인의 Gemini API 키로 무료로 이용해보세요.
             </p>
           </div>
           <Link
             href="/recovery"
-            className="shrink-0 rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"
+            className="shrink-0 rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_20px_-6px_rgba(217,96,58,0.45)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-[0_12px_24px_-6px_rgba(217,96,58,0.55)] active:translate-y-0"
           >
             AI 회복 플랜 받아보기
           </Link>
@@ -189,7 +189,7 @@ export default function HomePage() {
 
       <section id="faq" className="bg-brand-50/50">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
-          <h2 className="text-2xl font-bold text-slate-900">자주 묻는 질문</h2>
+          <h2 className="text-2xl font-semibold text-stone-900">자주 묻는 질문</h2>
           <div className="mt-8">
             <FaqAccordion items={FAQ_ITEMS} />
           </div>
@@ -198,15 +198,15 @@ export default function HomePage() {
 
       <section className="bg-gradient-to-b from-background to-brand-100">
         <div className="mx-auto max-w-5xl px-4 py-16 text-center sm:px-6">
-          <h2 className="text-2xl font-bold text-slate-900">
+          <h2 className="text-2xl font-semibold text-stone-900">
             지금 바로 상담을 신청해보세요
           </h2>
-          <p className="mt-2 text-sm text-slate-600">
+          <p className="mt-2 text-sm text-stone-600">
             신청서는 약 2분이면 작성할 수 있습니다.
           </p>
           <Link
             href="/apply"
-            className="mt-6 inline-flex items-center justify-center rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"
+            className="mt-6 inline-flex items-center justify-center rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_20px_-6px_rgba(217,96,58,0.45)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-[0_12px_24px_-6px_rgba(217,96,58,0.55)] active:translate-y-0"
           >
             상담 신청하기
           </Link>

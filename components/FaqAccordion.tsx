@@ -26,7 +26,7 @@ export default function FaqAccordion({ items }: { items: FaqItem[] }) {
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 onClick={() => setOpenIndex(isOpen ? null : index)}
-                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 sm:text-base"
+                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-stone-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 sm:text-base"
               >
                 <span>{item.question}</span>
                 <span
@@ -42,7 +42,7 @@ export default function FaqAccordion({ items }: { items: FaqItem[] }) {
                 id={panelId}
                 role="region"
                 aria-labelledby={buttonId}
-                className="px-5 pb-5 text-sm leading-6 text-slate-600"
+                className="px-5 pb-5 text-sm leading-6 text-stone-600"
               >
                 {item.answer}
               </div>

@@ -31,7 +31,7 @@ export default function AdminStatusSelect({
       value={status}
       disabled={isPending}
       onChange={(e) => handleChange(e.target.value as ApplicationStatus)}
-      className="rounded-lg border border-slate-300 px-2 py-1 text-sm disabled:opacity-60"
+      className="rounded-lg border border-stone-300 px-2 py-1 text-sm disabled:opacity-60"
     >
       {APPLICATION_STATUSES.map((s) => (
         <option key={s.value} value={s.value}>
