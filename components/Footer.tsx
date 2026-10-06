@@ -16,7 +16,10 @@ export default function Footer() {
               결제 및 온라인 검사 응시는 별도 절차로 진행됩니다.
             </p>
           </div>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
+            <Link href="/contact" className="hover:text-brand-700">
+              문의/건의
+            </Link>
             <Link href="/privacy" className="hover:text-brand-700">
               개인정보처리방침
             </Link>

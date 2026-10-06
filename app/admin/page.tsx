@@ -3,7 +3,7 @@ import { getSupabaseServerClient } from "@/lib/supabase";
 import { TEST_TYPES, CONSULT_METHODS } from "@/types/application";
 import type { ApplicationRecord } from "@/types/application";
 import AdminStatusSelect from "@/components/AdminStatusSelect";
-import { logoutAdmin } from "@/app/admin/actions";
+import AdminNav from "@/components/AdminNav";
 
 export const metadata: Metadata = {
   title: "관리자 대시보드",
@@ -40,17 +40,9 @@ export default async function AdminPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-      <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold text-stone-900">신청 접수 목록</h1>
-        <form action={logoutAdmin}>
-          <button
-            type="submit"
-            className="rounded-full border border-stone-300 px-4 py-2 text-sm font-medium text-stone-600 hover:bg-stone-50"
-          >
-            로그아웃
-          </button>
-        </form>
-      </div>
+      <AdminNav />
+
+      <h1 className="mt-6 text-2xl font-semibold text-stone-900">신청 접수 목록</h1>
 
       {error && (
         <p className="mt-6 rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">

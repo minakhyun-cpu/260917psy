@@ -3,9 +3,10 @@ import LogoMark from "@/components/LogoMark";
 
 const NAV_LINKS = [
   { href: "/#tests", label: "심리검사" },
-  { href: "/#process", label: "상담 절차" },
+  { href: "/columns", label: "칼럼" },
+  { href: "/reviews", label: "후기" },
   { href: "/recovery", label: "AI 번아웃 회복" },
-  { href: "/#faq", label: "자주 묻는 질문" },
+  { href: "/contact", label: "문의하기" },
 ];
 
 export default function Header() {
