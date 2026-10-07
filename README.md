@@ -119,6 +119,12 @@ Authentication → Sign-in method → **익명(Anonymous)** 제공업체를
 Firestore 보안 규칙이 "로그인된 사용자만 작성 가능"을 판단하는 데
 사용됩니다 (Spark 요금제에서 무료).
 
+**4-1. Google 로그인 활성화 (문의/건의 폼의 "Google 계정으로 자동 입력" 버튼용)**
+같은 Sign-in method 탭에서 **Google** 제공업체도 사용 설정하고, 프로젝트
+지원 이메일을 지정합니다. 문의 폼에서 이 버튼을 누르면 이름·이메일이
+Google 계정 정보로 자동 입력됩니다 — 로그인은 선택 사항이며, 누르지 않아도
+기존처럼 직접 입력해 제출할 수 있습니다.
+
 **5. 보안 규칙 게시**
 Firestore Database → **규칙(Rules)** 탭에서 `firebase/firestore.rules`의
 내용을 붙여넣고 게시(Publish)합니다.

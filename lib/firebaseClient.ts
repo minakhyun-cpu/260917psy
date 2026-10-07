@@ -28,11 +28,15 @@ export function getClientDb() {
   return getFirestore(getClientApp());
 }
 
+export function getClientAuth() {
+  return getAuth(getClientApp());
+}
+
 // Writes require request.auth != null per the Firestore rules, so sign in
 // anonymously (silent, no UI) before the first write or read of the
 // session. Safe to call repeatedly — it's a no-op once already signed in.
 export async function ensureSignedIn() {
-  const auth = getAuth(getClientApp());
+  const auth = getClientAuth();
   if (!auth.currentUser) {
     await signInAnonymously(auth);
   }

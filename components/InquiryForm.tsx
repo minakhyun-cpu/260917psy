@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { inquirySchema, type InquiryInput } from "@/types/inquiry";
 import { submitInquiryClient } from "@/lib/inquiriesClient";
+import GoogleSignInButton, { type GoogleProfile } from "@/components/GoogleSignInButton";
 
 const inputClasses =
   "w-full rounded-lg border border-stone-300 px-3 py-2 text-sm text-stone-900 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600";
@@ -19,11 +20,17 @@ export default function InquiryForm() {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors, isSubmitting },
   } = useForm<InquiryInput>({
     resolver: zodResolver(inquirySchema),
     defaultValues: { name: "", email: "", message: "", website: "" },
   });
+
+  const handleGoogleProfile = (profile: GoogleProfile | null) => {
+    setValue("name", profile?.displayName ?? "", { shouldValidate: true });
+    setValue("email", profile?.email ?? "", { shouldValidate: true });
+  };
 
   const onSubmit = async (data: InquiryInput) => {
     setSubmitError(null);
@@ -55,6 +62,8 @@ export default function InquiryForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
+      <GoogleSignInButton onChange={handleGoogleProfile} />
+
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className={labelClasses}>
