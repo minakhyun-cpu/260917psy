@@ -1,0 +1,55 @@
+rules_version = '2';
+
+// Deploy this in the Firebase Console: Firestore Database > Rules tab,
+// paste this file's contents, and click "Publish".
+//
+// - reviews: anyone can read, and anyone signed in (anonymous auth is
+//   enabled for this) can create one — never update or delete from the
+//   client. Moderation (delete) happens server-side via the Admin SDK,
+//   which bypasses these rules entirely.
+// - inquiries: create-only from the client, never readable — inquiries
+//   may contain contact details and are only meant for the site's
+//   operator, who reads them server-side via the Admin SDK.
+// - columns: the client never touches this collection at all. Public
+//   reads and all admin writes go through the Admin SDK on the server.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /reviews/{reviewId} {
+      allow read: if true;
+      allow create: if request.auth != null
+        && request.resource.data.keys().hasOnly(['name', 'rating', 'content', 'createdAt'])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.name.size() <= 30
+        && request.resource.data.rating is int
+        && request.resource.data.rating >= 1
+        && request.resource.data.rating <= 5
+        && request.resource.data.content is string
+        && request.resource.data.content.size() >= 5
+        && request.resource.data.content.size() <= 1000
+        && request.resource.data.createdAt == request.time;
+      allow update, delete: if false;
+    }
+
+    match /inquiries/{inquiryId} {
+      allow read: if false;
+      allow create: if request.auth != null
+        && request.resource.data.keys().hasOnly(['name', 'email', 'message', 'resolved', 'createdAt'])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.name.size() <= 30
+        && request.resource.data.email is string
+        && request.resource.data.email.size() <= 100
+        && request.resource.data.message is string
+        && request.resource.data.message.size() >= 5
+        && request.resource.data.message.size() <= 2000
+        && request.resource.data.resolved == false
+        && request.resource.data.createdAt == request.time;
+      allow update, delete: if false;
+    }
+
+    match /columns/{columnId} {
+      allow read, write: if false;
+    }
+  }
+}

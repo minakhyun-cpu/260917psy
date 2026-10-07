@@ -1,11 +1,12 @@
 export type TestCatalogItem = {
-  slug: "personality" | "career" | "stress" | "other";
+  slug: "personality" | "child" | "stress" | "other";
   title: string;
   tagline: string;
   duration: string;
   format: string;
   description: string;
   goodFor: string[];
+  subTests?: string[];
 };
 
 export const TEST_CATALOG: TestCatalogItem[] = [
@@ -18,16 +19,18 @@ export const TEST_CATALOG: TestCatalogItem[] = [
     description:
       "표준화된 성격 척도를 통해 기질, 대인관계 패턴, 스트레스 대처 방식을 살펴보고, 전문 상담사와 함께 결과를 해석합니다.",
     goodFor: ["자기이해를 높이고 싶은 분", "대인관계 패턴을 점검하고 싶은 분"],
+    subTests: ["TCI", "MBTI"],
   },
   {
-    slug: "career",
-    title: "진로적성검사",
-    tagline: "강점을 살린 진로 방향을 탐색해요",
-    duration: "약 50~70분",
-    format: "온라인 적성·흥미 검사 + 1:1 해석상담",
+    slug: "child",
+    title: "자녀 검사",
+    tagline: "우리 아이의 기질과 학습 성향을 이해해요",
+    duration: "약 40~60분",
+    format: "온라인 자기·보호자 보고식 검사 + 1:1 해석상담",
     description:
-      "흥미, 적성, 가치관을 다각도로 진단하여 진로 선택이나 전환의 방향을 함께 탐색하고 구체적인 실행 계획을 세웁니다.",
-    goodFor: ["진로를 고민 중인 학생", "이직·전직을 고려하는 직장인"],
+      "자녀의 학습 태도, 기질, 성격 유형, 환경 적응력을 다각도로 살펴보고, 보호자와 함께 결과를 해석하며 필요한 지원 방향을 안내합니다.",
+    goodFor: ["자녀의 학습 습관이 궁금한 부모님", "자녀의 기질과 적응력을 이해하고 싶은 부모님"],
+    subTests: ["MLST", "JTCI", "MBTI", "마인드핏 적응역량검사"],
   },
   {
     slug: "stress",

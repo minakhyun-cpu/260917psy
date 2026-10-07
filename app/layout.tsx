@@ -1,35 +1,37 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Noto_Sans_KR, Noto_Serif_KR } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const notoSans = Noto_Sans_KR({
+  variable: "--font-sans-kr",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const notoSerif = Noto_Serif_KR({
+  variable: "--font-serif-kr",
   subsets: ["latin"],
+  weight: ["500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "마음결 심리상담센터",
-    template: "%s | 마음결 심리상담센터",
+    default: "마지 마인드랩",
+    template: "%s | 마지 마인드랩",
   },
   description:
-    "성격검사, 진로적성검사, 정서·스트레스 척도 등 심리검사와 1:1 해석상담을 온라인으로 신청하세요.",
+    "성격검사, 자녀 검사, 정서·스트레스 척도 등 심리검사와 1:1 해석상담을 온라인으로 신청하세요.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="ko"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${notoSans.variable} ${notoSerif.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-white text-slate-900">
+      <body className="flex min-h-full flex-col bg-background text-foreground">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

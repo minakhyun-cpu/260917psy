@@ -6,6 +6,7 @@ const validInput: ApplicationInput = {
   phone: "010-1234-5678",
   email: "test@example.com",
   testType: "personality",
+  subTests: ["TCI"],
   consultMethod: "online",
   preferredDate: "2099-01-01",
   message: "잘 부탁드립니다.",
@@ -57,6 +58,50 @@ describe("applicationSchema", () => {
       testType: "unknown",
     });
     expect(result.success).toBe(false);
+  });
+
+  it("accepts multiple sub-tests selected for personality", () => {
+    const result = applicationSchema.safeParse({
+      ...validInput,
+      subTests: ["TCI", "MBTI"],
+    });
+    expect(result.success).toBe(true);
+  });
+
+  it("rejects personality with no sub-tests selected", () => {
+    const result = applicationSchema.safeParse({
+      ...validInput,
+      testType: "personality",
+      subTests: [],
+    });
+    expect(result.success).toBe(false);
+  });
+
+  it("rejects child test type with no sub-tests selected", () => {
+    const result = applicationSchema.safeParse({
+      ...validInput,
+      testType: "child",
+      subTests: [],
+    });
+    expect(result.success).toBe(false);
+  });
+
+  it("accepts child test type with sub-tests selected", () => {
+    const result = applicationSchema.safeParse({
+      ...validInput,
+      testType: "child",
+      subTests: ["MLST", "JTCI"],
+    });
+    expect(result.success).toBe(true);
+  });
+
+  it("accepts stress test type with no sub-tests (none defined for it)", () => {
+    const result = applicationSchema.safeParse({
+      ...validInput,
+      testType: "stress",
+      subTests: [],
+    });
+    expect(result.success).toBe(true);
   });
 
   it("rejects an unknown consult method", () => {

@@ -33,6 +33,7 @@ export async function submitApplication(
       phone: data.phone,
       email: data.email,
       test_type: data.testType,
+      sub_tests: data.subTests,
       consult_method: data.consultMethod,
       preferred_date: data.preferredDate,
       message: data.message || null,
