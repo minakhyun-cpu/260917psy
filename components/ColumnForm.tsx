@@ -10,7 +10,7 @@ const inputClasses =
 const labelClasses = "block text-sm font-medium text-stone-700";
 
 // Default byline for new columns — the site operator.
-const DEFAULT_AUTHOR_NAME = "minakhyun";
+const DEFAULT_AUTHOR_NAME = "Mazi";
 
 export default function ColumnForm({
   action,
