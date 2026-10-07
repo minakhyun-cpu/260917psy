@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { reviewSchema, type ReviewInput } from "@/types/review";
-import { submitReview } from "@/app/reviews/actions";
+import { submitReviewClient } from "@/lib/reviewsClient";
 
 const inputClasses =
   "w-full rounded-lg border border-stone-300 px-3 py-2 text-sm text-stone-900 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600";
@@ -31,7 +31,7 @@ export default function ReviewForm() {
 
   const onSubmit = async (data: ReviewInput) => {
     setSubmitError(null);
-    const result = await submitReview(data);
+    const result = await submitReviewClient(data);
 
     if (!result.success) {
       setSubmitError(result.error);

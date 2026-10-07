@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { inquirySchema, type InquiryInput } from "@/types/inquiry";
-import { submitInquiry } from "@/app/contact/actions";
+import { submitInquiryClient } from "@/lib/inquiriesClient";
 
 const inputClasses =
   "w-full rounded-lg border border-stone-300 px-3 py-2 text-sm text-stone-900 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600";
@@ -27,7 +27,7 @@ export default function InquiryForm() {
 
   const onSubmit = async (data: InquiryInput) => {
     setSubmitError(null);
-    const result = await submitInquiry(data);
+    const result = await submitInquiryClient(data);
 
     if (!result.success) {
       setSubmitError(result.error);
