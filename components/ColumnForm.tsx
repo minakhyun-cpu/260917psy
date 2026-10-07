@@ -9,6 +9,9 @@ const inputClasses =
   "w-full rounded-lg border border-stone-300 px-3 py-2 text-sm text-stone-900 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600";
 const labelClasses = "block text-sm font-medium text-stone-700";
 
+// Default byline for new columns — the site operator.
+const DEFAULT_AUTHOR_NAME = "minakhyun";
+
 export default function ColumnForm({
   action,
   initialValues,
@@ -76,7 +79,7 @@ export default function ColumnForm({
             type="text"
             required
             maxLength={30}
-            defaultValue={initialValues?.authorName}
+            defaultValue={initialValues?.authorName ?? DEFAULT_AUTHOR_NAME}
             className={inputClasses}
           />
         </div>
